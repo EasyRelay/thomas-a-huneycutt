@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-19 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center">
-                <img className="w-16 h-10 text-white" src='public/images/image.png' />
+                <img className="w-16 h-10 text-white" src='images/image.png' />
               </div>
               <div className="text-xl -mt-2 font-bold">
                 <span className="text-red-500">Thomas</span>
@@ -120,42 +120,6 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
             </button>
           </div>
         </div>
-
-        {/* <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex flex-wrap justify-center md:justify-start space-x-6">
-              <button
-                onClick={() => setCurrentPage('privacy')}
-                className="text-gray-400 hover:text-red-500 transition-colors flex items-center space-x-1"
-              >
-                <FileText className="w-4 h-4" />
-                <ScrollToTop />
-                <span>Privacy Policy</span>
-              </button>
-              <button
-                onClick={() => setCurrentPage('terms')}
-                className="text-gray-400 hover:text-red-500 transition-colors flex items-center space-x-1"
-              >
-                <ScrollToTop />
-                <FileText className="w-4 h-4" />
-                <span>Terms of Service</span>
-              </button>
-              <button
-                onClick={() => setCurrentPage('cookies')}
-                className="text-gray-400 hover:text-red-500 transition-colors flex items-center space-x-1"
-              >
-                <ScrollToTop />
-                <FileText className="w-4 h-4" />
-                <span>Cookie Policy</span>
-              </button>
-            </div>
-          </div>
-          <div className="text-center mt-6">
-            <p className="text-gray-400">
-              © 2025 Thomas - A Huneycutt Trucking. All rights reserved.
-            </p>
-          </div>
-        </div> */}
       </div>
     </footer>
   );

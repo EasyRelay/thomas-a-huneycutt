@@ -11,7 +11,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(public/images/types-of-trucks.jpg)'
+          backgroundImage: 'url(images/types-of-trucks.jpg)'
         }}
       >
         <div className="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
