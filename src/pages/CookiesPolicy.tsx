@@ -1,15 +1,14 @@
 import { ArrowLeft } from 'lucide-react';
-import Footer from '../components/Footer';
 
 interface PolicyPageProps {
   setPage: (page: string) => void;
   onBack: () => void;
 }
 
-const CookiesPolicy: React.FC<PolicyPageProps> = ({ setPage, onBack }) => {
+const CookiesPolicy: React.FC<PolicyPageProps> = ({ onBack }) => {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-inter">
-      <main className="pt-24">
+      <main className="">
         <div className="container mx-auto px-4 lg:px-8 py-16">
           <div className="max-w-4xl mx-auto bg-white rounded-2xl p-10 border border-gray-200 shadow-md">
             <button
@@ -17,7 +16,7 @@ const CookiesPolicy: React.FC<PolicyPageProps> = ({ setPage, onBack }) => {
               className="flex items-center space-x-2 text-red-600 hover:text-red-700 mb-8 transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>Back to Home</span>
+              <span>Back</span>
             </button>
 
             <h1 className="text-4xl md:text-5xl font-bold text-blue-800 mb-10 tracking-tight">
@@ -93,7 +92,6 @@ const CookiesPolicy: React.FC<PolicyPageProps> = ({ setPage, onBack }) => {
           </div>
         </div>
       </main>
-      <Footer setCurrentPage={setPage} scrollToSection={() => {}} />
     </div>
   );
 };

@@ -41,8 +41,8 @@ const AboutSection: React.FC = () => {
             />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-600 rounded-lg flex items-center justify-center">
               <div className="text-center text-white">
-                <div className="text-2xl font-bold">30+</div>
-                <div className="text-sm">Month Experience</div>
+                <div className="text-2xl font-bold">18+</div>
+                <div className="text-sm">Year Experience</div>
               </div>
             </div>
           </div>

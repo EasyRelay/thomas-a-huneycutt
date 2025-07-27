@@ -1,6 +1,5 @@
 import React from 'react';
 import { Phone, Mail, MapPin, FileText } from 'lucide-react';
-import ScrollToTop from './ScrollToTop';
 
 interface FooterProps {
   scrollToSection: (sectionId: string) => void;
@@ -91,7 +90,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
           </div>
         </div>
 
-        <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
+        <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
           <p>&copy; 2025 Thomas - A Huneycutt Trucking. All rights reserved.</p>
           <div className="flex items-center space-x-4">
             <button
@@ -99,14 +98,12 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
               className="text-gray-400 hover:text-red-500 transition-colors flex items-center space-x-1"
             >
               <FileText className="w-4 h-4" />
-              <ScrollToTop />
               <span>Privacy Policy</span>
             </button>
             <button
               onClick={() => setCurrentPage('terms')}
               className="text-gray-400 hover:text-red-500 transition-colors flex items-center space-x-1"
             >
-              <ScrollToTop />
               <FileText className="w-4 h-4" />
               <span>Terms of Service</span>
             </button>
@@ -114,7 +111,6 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
               onClick={() => setCurrentPage('cookies')}
               className="text-gray-400 hover:text-red-500 transition-colors flex items-center space-x-1"
             >
-              <ScrollToTop />
               <FileText className="w-4 h-4" />
               <span>Cookie Policy</span>
             </button>
