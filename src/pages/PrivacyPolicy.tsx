@@ -8,9 +8,8 @@ interface PolicyPageProps {
 const PrivacyPolicy: React.FC<PolicyPageProps> = ({ onBack }) => {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-inter">
-      <main className="">
         <div className="container mx-auto px-4 lg:px-8 py-16">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-10 border border-gray-200 shadow-md">
+          {/* <div className="max-w-4xl mx-auto bg-white rounded-2xl p-10 border border-gray-200 shadow-md"> */}
             <button
               onClick={onBack}
               className="flex items-center space-x-2 text-red-600 hover:text-red-700 mb-8 transition-colors"
@@ -106,9 +105,8 @@ const PrivacyPolicy: React.FC<PolicyPageProps> = ({ onBack }) => {
                 Last Updated: 27.07.2025
               </p>
             </div>
-          </div>
+          {/* </div> */}
         </div>
-      </main>
     </div>
   );
 };
