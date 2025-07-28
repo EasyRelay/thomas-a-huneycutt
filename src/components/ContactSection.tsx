@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const ContactSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -45,7 +45,16 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                  <p className="text-gray-600">2425 Medina Road STE <br/>117 Medina, OH 44256</p>
+                  <p className="text-gray-600">2425 Medina Road STE <br />117 Medina, OH 44256</p>
+                  <a
+                    href="https://www.google.com/maps/place/2425+Medina+Rd+%23117,+Medina,+OH+44256"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center mt-2 text-red-600 hover:underline text-sm font-medium"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    Open in Google Maps
+                  </a>
                 </div>
               </div>
             </div>
@@ -55,18 +64,18 @@ const ContactSection: React.FC = () => {
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready to Get Started?</h3>
             <p className="text-gray-600 mb-8">
-              Contact us today to discuss your freight needs or to join our professional fleet. 
+              Contact us today to discuss your freight needs or to join our professional fleet.
               We're here to provide reliable transportation solutions.
             </p>
             <div className="space-y-4">
-              <a 
+              <a
                 href="tel:(330)474-3006"
                 className="w-full bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors transform hover:scale-105 flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Call (330) 474-3006</span>
               </a>
-              <a 
+              <a
                 href="mailto:info@thomasohio.com"
                 className="w-full border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors flex items-center justify-center space-x-2"
               >
