@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
 import PolicyModal from './components/PolicyModal';
 
@@ -14,24 +14,21 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  // ✨ modal ochilganda URL hash ni o'rnatish
   useEffect(() => {
     if (policyModalType) {
       window.location.hash = policyModalType;
     } else if (window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname); // hash ni tozalash
+      window.history.replaceState(null, '', window.location.pathname);
     }
   }, [policyModalType]);
 
-  // ✨ sahifa yuklanganda hash bo‘lsa, modalni ochish
-  useEffect(() => {
+  useLayoutEffect(() => {
     const hash = window.location.hash.replace('#', '') as "privacy" | "terms" | "cookies";
     if (['privacy', 'terms', 'cookies'].includes(hash)) {
       setPolicyModalType(hash);
     }
   }, []);
 
-  // ✨ back/forward tugmalarda hashni kuzatish
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '') as "privacy" | "terms" | "cookies";
