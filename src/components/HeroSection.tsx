@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           Professional freight services with reliable drivers and cutting-edge fleet monitoring. 
           Your cargo, our commitment.
           <p className="text-lg text-gray-300">
-                        <strong>MC:</strong> 1598514 &nbsp; | &nbsp; <strong>DOT:</strong> 3856056
+                        <strong>MC:</strong> 606362 &nbsp; | &nbsp; <strong>DOT:</strong> 1288693
                     </p>
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

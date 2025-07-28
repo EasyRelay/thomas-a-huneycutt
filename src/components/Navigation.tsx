@@ -23,7 +23,6 @@ const Navigation: React.FC<NavigationProps> = ({ isMenuOpen, setIsMenuOpen, scro
             </div>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <button
@@ -53,7 +52,6 @@ const Navigation: React.FC<NavigationProps> = ({ isMenuOpen, setIsMenuOpen, scro
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

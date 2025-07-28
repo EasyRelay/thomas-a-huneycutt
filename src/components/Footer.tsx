@@ -11,7 +11,6 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-19 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center">
@@ -25,8 +24,8 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
             <p className="text-gray-400 mb-6 max-w-md">
               Professional freight services with reliable drivers and cutting-edge fleet monitoring.
               Your trusted partner in transportation solutions.
-              <br /><strong>MC:</strong> 1598514
-              <br /><strong>DOT:</strong> 3856056
+              <br /><strong>MC:</strong> 606362
+              <br /><strong>DOT:</strong> 1288693
             </p>
 
           </div>
