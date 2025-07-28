@@ -80,7 +80,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, setCurrentPage }) => {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-red-500" />
-                <span className="text-gray-400">info@thomashuneycutt.com</span>
+                <span className="text-gray-400">info@thomasohio.com</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-red-500 mt-1" />

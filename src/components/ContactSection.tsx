@@ -35,7 +35,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">info@thomashuneycutt.com</p>
+                  <p className="text-gray-600">info@thomasohio.com</p>
                 </div>
               </div>
 
@@ -67,7 +67,7 @@ const ContactSection: React.FC = () => {
                 <span>Call (330) 474-3006</span>
               </a>
               <a 
-                href="mailto:info@thomashuneycutt.com"
+                href="mailto:info@thomasohio.com"
                 className="w-full border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors flex items-center justify-center space-x-2"
               >
                 <Mail className="w-5 h-5" />
