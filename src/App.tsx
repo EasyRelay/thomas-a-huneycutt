@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
 import PolicyModal from './components/PolicyModal';
 
@@ -14,6 +14,37 @@ function App() {
     setIsMenuOpen(false);
   };
 
+  // ✨ modal ochilganda URL hash ni o'rnatish
+  useEffect(() => {
+    if (policyModalType) {
+      window.location.hash = policyModalType;
+    } else if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname); // hash ni tozalash
+    }
+  }, [policyModalType]);
+
+  // ✨ sahifa yuklanganda hash bo‘lsa, modalni ochish
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '') as "privacy" | "terms" | "cookies";
+    if (['privacy', 'terms', 'cookies'].includes(hash)) {
+      setPolicyModalType(hash);
+    }
+  }, []);
+
+  // ✨ back/forward tugmalarda hashni kuzatish
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '') as "privacy" | "terms" | "cookies";
+      if (['privacy', 'terms', 'cookies'].includes(hash)) {
+        setPolicyModalType(hash);
+      } else {
+        setPolicyModalType(null);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   return (
     <>
       <HomePage
@@ -26,7 +57,10 @@ function App() {
         <PolicyModal
           open={!!policyModalType}
           type={policyModalType}
-          onClose={() => setPolicyModalType(null)}
+          onClose={() => {
+            setPolicyModalType(null);
+            window.history.pushState(null, '', window.location.pathname); // hash ni tozalash
+          }}
         />
       )}
     </>
