@@ -11,18 +11,16 @@ interface HomePageProps {
   isMenuOpen: boolean;
   setIsMenuOpen: (open: boolean) => void;
   scrollToSection: (sectionId: string) => void;
-  setCurrentPage: (page: string) => void;
 }
 
 const HomePage: React.FC<HomePageProps> = ({ 
   isMenuOpen, 
   setIsMenuOpen, 
   scrollToSection, 
-  setCurrentPage 
 }) => {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation 
+      <Navigation
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         scrollToSection={scrollToSection}
@@ -34,7 +32,6 @@ const HomePage: React.FC<HomePageProps> = ({
       <ContactSection />
       <Footer 
         scrollToSection={scrollToSection}
-        setCurrentPage={setCurrentPage}
       />
     </div>
   );

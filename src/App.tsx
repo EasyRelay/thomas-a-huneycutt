@@ -1,10 +1,12 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useState } from 'react';
 import HomePage from './pages/HomePage';
-import PolicyModal from './components/PolicyModal';
+import { Route, Routes } from 'react-router-dom';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookiesPolicy from './pages/CookiesPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [policyModalType, setPolicyModalType] = useState<"privacy" | "terms" | "cookies" | null>(null);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,52 +16,19 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  useEffect(() => {
-    if (policyModalType) {
-      window.location.hash = policyModalType;
-    } else if (window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname);
-    }
-  }, [policyModalType]);
-
-  useLayoutEffect(() => {
-    const hash = window.location.hash.replace('#', '') as "privacy" | "terms" | "cookies";
-    if (['privacy', 'terms', 'cookies'].includes(hash)) {
-      setPolicyModalType(hash);
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '') as "privacy" | "terms" | "cookies";
-      if (['privacy', 'terms', 'cookies'].includes(hash)) {
-        setPolicyModalType(hash);
-      } else {
-        setPolicyModalType(null);
-      }
-    };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
   return (
     <>
-      <HomePage
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-        scrollToSection={scrollToSection}
-        setCurrentPage={(page) => setPolicyModalType(page as any)}
-      />
-      {policyModalType && (
-        <PolicyModal
-          open={!!policyModalType}
-          type={policyModalType}
-          onClose={() => {
-            setPolicyModalType(null);
-            window.history.pushState(null, '', window.location.pathname); // hash ni tozalash
-          }}
-        />
-      )}
+      <Routes>
+        <Route path='/' element={<HomePage
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+          scrollToSection={scrollToSection}
+        />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/cookie-policy' element={<CookiesPolicy />} />
+        <Route path='/terms-of-service' element={<TermsOfService />} />
+      </Routes>
+
     </>
   );
 }
